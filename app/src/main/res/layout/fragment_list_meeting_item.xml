@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/item_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete_black" />
+
+    <ImageView
+        android:id="@+id/item_imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_brightness_1_amber_300_24dp" />
+
+    <TextView
+        android:id="@+id/item_participants_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/item_text_mail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/item_delete_button"
+        app:layout_constraintStart_toEndOf="@+id/item_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxEms="4"
+        app:maxLines="1"
+        android:text="@string/item_text_reunion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/normal"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/item_imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_dash1"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="1dp"
+        android:ellipsize="end"
+        app:maxLines="1"
+        android:text="-"
+        android:textSize="@dimen/normal"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/item_name"
+        app:layout_constraintTop_toTopOf="@+id/item_name"
+         />
+
+    <TextView
+        android:id="@+id/item_dash"
+        android:layout_width="1dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="1dp"
+        android:ellipsize="end"
+        app:maxLines="1"
+        android:text="-"
+        android:textSize="@dimen/normal"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/item_time_textView"
+        app:layout_constraintTop_toTopOf="@+id/item_time_textView"
+
+        />
+
+    <TextView
+        android:id="@+id/item_time_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="08h00"
+        android:textSize="@dimen/normal"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/item_dash1"
+        app:layout_constraintTop_toTopOf="@+id/item_dash1" />
+
+    <TextView
+        android:id="@+id/item_room_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="TextText"
+        android:textAlignment="center"
+        android:textSize="@dimen/normal"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/item_delete_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/item_dash"
+        app:layout_constraintTop_toTopOf="@+id/item_dash" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

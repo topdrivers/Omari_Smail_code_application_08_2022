@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Mareu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Set content description fragment_neighbour -->
+    <string name="item_list_avatar">Avatar item</string>
+    <string name="item_list_delete_button">delete button</string>
+
+    <!-- Set content description activity_list_MEETING -->
+    <string name="add_meeting">add Meeting</string>
+
+    <!-- Set content description fragment_list_meeting_item -->
+    <string name="item_text_mail">smail.omari@laposte.net</string>
+    <string name="item_text_reunion">Meeting Title</string>
+
+
+    <!-- Set content description fragment_details_meeting -->
+    <string name="save_button">Enregistrer</string>
+    <string name="meeting_room">Veuillez sélectionner une salle</string>
+    <string name="meeting_date">Date de la réunion</string>
+    <string name="date">01/01/2000</string>
+    <string name="begin_hour_2points">10:00</string>
+    <string name="finish_hour_2points">11:00</string>
+    <string name="begin_hour">Heure de début</string>
+    <string name="finish_hour">Heure de fin</string>
+    <string name="participants">user@user.fr</string>
+    <string name="add_participant">Ajouter participants</string>
+    <string name="choose_room">Veuillez choisir une salle</string>
+    <string name="meeting_name">Renseigner le nom de la réunion</string>
+    <string name="nameRoom">Nom de la salle :</string>
+    <string name="commaParticipants">, </string>
+
+    <!-- for spinner room array-->
+    <string name="room01">Eclair</string>
+    <string name="room02">Andromede</string>
+    <string name="room03">Paintsilvia</string>
+    <string name="room04">Pegasus</string>
+    <string name="room05">Vulton</string>
+    <string name="room06">Quantum</string>
+    <string name="room07">Sirius</string>
+    <string name="room08">Phebus</string>
+    <string name="room09">Betelgeuse</string>
+    <string name="room10">Centurion</string>
+
+
+    <!-- for Autocomplete utils string-->
+    <string name="error_message">Email erronné !</string>
+
+
+</resources>

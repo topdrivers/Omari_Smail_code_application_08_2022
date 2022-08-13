@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="participants_arrays">
+        <item>gerant@startup.fr</item>
+        <item>responsable@startup.fr</item>
+        <item>assitant@startup.fr</item>
+        <item>commerciale@startup.fr</item>
+        <item>disign@startup.fr</item>
+        <item>comptable@startup.fr</item>
+    </string-array>
+</resources>
