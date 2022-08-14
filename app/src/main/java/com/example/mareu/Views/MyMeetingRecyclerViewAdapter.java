@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.mareu.Activities.DetailsMeetingActivity;
 import com.example.mareu.Events.DeleteMeetingEvent;
-import com.example.mareu.Fragments.DetailsMeetingFragment;
 import com.example.mareu.R;
 import com.example.mareu.model.Meeting;
 
@@ -52,12 +51,12 @@ public class MyMeetingRecyclerViewAdapter extends   RecyclerView.Adapter<MyMeeti
         holder.time.setText(meeting.getStartDate().toString("dd/MM HH:mm") );
         holder.room.setText(meeting.getRoom().getName());
 
-        if(meeting.getStatus()=="BEFORE") {
+        if(meeting.getStatus().equals("BEFORE")) {
             Glide.with(holder.meetingAvatar.getContext())
                     .load(R.drawable.ic_brightness_1_red_200_24dp)
                     .apply(RequestOptions.circleCropTransform())
                     .into(holder.meetingAvatar);
-        }else if (meeting.getStatus()=="AFTER"){
+        }else if (meeting.getStatus().equals("AFTER")){
             Glide.with(holder.meetingAvatar.getContext())
                     .load(R.drawable.ic_brightness_1_light_green_300_24dp)
                     .apply(RequestOptions.circleCropTransform())
@@ -75,25 +74,13 @@ public class MyMeetingRecyclerViewAdapter extends   RecyclerView.Adapter<MyMeeti
                 .setOnClickListener(v -> EventBus.getDefault()
                         .post(new DeleteMeetingEvent(meeting)));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
+            Bundle bundle=new Bundle();
+            bundle.putSerializable("id",meeting);
+            Intent intent = new Intent(holder.itemView.getContext(), DetailsMeetingActivity.class);
+            intent.putExtras(bundle);
 
-
-                /*Injection de l'id dans l'intent pour pouvoir récupérer le bon item*/
-                //intent.putExtra("id", meeting);
-                Bundle bundle=new Bundle();
-                bundle.putSerializable("id",meeting);
-                Intent intent = new Intent(holder.itemView.getContext(), DetailsMeetingActivity.class);
-                intent.putExtras(bundle);
-
-
-
-                //intent.putExtra("id", meetingList.indexOf(meeting));
-
-
-                holder.itemView.getContext().startActivity(intent);
-            }
+            holder.itemView.getContext().startActivity(intent);
         });
     }
 
@@ -106,10 +93,10 @@ public class MyMeetingRecyclerViewAdapter extends   RecyclerView.Adapter<MyMeeti
 
 
     public Meeting getMeeting(int position){
-        System.out.println("-----------------positon adapter-----------------"+position);
         return this.meetingList.get(position);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void updateData(List<Meeting> meetings){
 
         this.meetingList = meetings;

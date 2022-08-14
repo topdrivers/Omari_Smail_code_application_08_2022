@@ -39,7 +39,6 @@ public class Meeting implements Serializable {
         this.startDate = startDate;
         this.endTime = endTime;
         this.room = room;
-        //this.status = status;
     }
 
 
@@ -77,9 +76,6 @@ public class Meeting implements Serializable {
         this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public void setStatus(String status) {
         this.status = status;

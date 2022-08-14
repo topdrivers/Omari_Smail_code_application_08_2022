@@ -12,10 +12,6 @@ import org.joda.time.DateTime;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/**
- * Created by Philippe on 27/02/2018.
- */
-
 public class ItemViewModel extends ViewModel {
 
     // REPOSITORIES
@@ -31,9 +27,6 @@ public class ItemViewModel extends ViewModel {
         this.executor = executor;
     }
 
-
-
-
     // -------------
     // FOR ITEM
     // -------------
@@ -47,21 +40,15 @@ public class ItemViewModel extends ViewModel {
     }
 
     public void createItem(Meeting meeting) {
-        executor.execute(() -> {
-            itemDataSource.createItem(meeting);
-        });
+        executor.execute(() -> itemDataSource.createItem(meeting));
     }
 
     public void deleteItem(Meeting meeting) {
-        executor.execute(() -> {
-            itemDataSource.deleteItem(meeting);
-        });
+        executor.execute(() -> itemDataSource.deleteItem(meeting));
     }
 
     public void filterItemRoom(String room){
-        executor.execute(() -> {
-            itemDataSource.filerItemRoom(room);
-        });
+        executor.execute(() -> itemDataSource.filerItemRoom(room));
     }
 
 

@@ -8,10 +8,6 @@ import com.example.mareu.repository.ItemDataRepository;
 
 import java.util.concurrent.Executor;
 
-/**
- * Created by Philippe on 27/02/2018.
- */
-
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
 

@@ -9,31 +9,26 @@ import static com.example.mareu.Utils.TimeUtils.endTimeHandle;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.mareu.Activities.ListMeetingActivity;
-import com.example.mareu.DI.DI;
+
 import com.example.mareu.R;
-import com.example.mareu.Utils.MeetingUtils;
+
 import com.example.mareu.Utils.ToastUtils;
 import com.example.mareu.model.Meeting;
 import com.example.mareu.model.Room;
-import com.example.mareu.service.MeetingApiService;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -41,171 +36,111 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CreateMeetingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CreateMeetingFragment extends Fragment {
-    private MeetingApiService mApiService ;
-    public static Spinner meetingRoomsSpinner;
-    @BindView(R.id.create_meeting_fragment_select)
-    TextView selectRoom;
-    @BindView(R.id.create_meeting_fragment_name) TextView meetingName;
-    @BindView(R.id.create_meeting_fragment_date_textView) TextView dateEdit;
-    @BindView(R.id.create_meeting_fragment_start_hour) TextView beginTimeEdit;
-    @BindView(R.id.create_meeting_fragment_end_hour) TextView endTimeEdit;
-    @BindView(R.id.create_meeting_fragment_start_hour_button) Button startHourButton;
-    @BindView(R.id.create_meeting_fragment_date_button) Button dateButton;
-    @BindView(R.id.create_meeting_fragment_end_hour_button) Button endHourButton;
 
-    @BindView(R.id.participant_autoCompleteTextView)
-    AutoCompleteTextView participantsAutoCompleteTextView;
-    @BindView(R.id.chipGroup)
-    ChipGroup participantsChipGroup;
-    @BindView(R.id.addParticipant_button)
-    Button addParticipantButton;
-    @BindView(R.id.create_meeeting_fragment_save_button) Button buttonSave;
-    @BindView(R.id.create_meeting_fragment_email_input)
-    TextInputLayout emailInput;
-    int id;
-    Meeting meeting;
+    public static                                             Spinner    meetingRoomsSpinner;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_select)            TextView   selectRoom;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_name)              TextView   meetingName;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_date_textView)     TextView   dateEdit;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_start_hour)        TextView   beginTimeEdit;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_end_hour)          TextView   endTimeEdit;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_start_hour_button) Button     startHourButton;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_date_button)       Button     dateButton;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_end_hour_button)   Button     endHourButton;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.addParticipant_button)                     Button     addParticipantButton;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeeting_fragment_save_button)      Button     buttonSave;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.participant_autoCompleteTextView)AutoCompleteTextView participantsAutoCompleteTextView;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.chipGroup)                                 ChipGroup  participantsChipGroup;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.create_meeting_fragment_email_input)  TextInputLayout emailInput;
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.toolbar)                                   Toolbar    toolbar;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public CreateMeetingFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CreateMeetingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CreateMeetingFragment newInstance(String param1, String param2) {
-        CreateMeetingFragment fragment = new CreateMeetingFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-        //mApiService = DI.getNeighbourApiService();
-        ButterKnife.bind(getActivity());
-
-
-        /* Affichage toolbar avec flèche retour
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(requireActivity());
+        /*Affichage toolbar avec flèche retour
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
- */
 
-
-
-
-
+         */
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onResume() {
         super.onResume();
 
-        configureSpinner(getContext());
+        configureSpinner(requireContext());
 
         /* Autocomplete + chips to add the participants : */
         Autocomplete(participantsAutoCompleteTextView, getActivity(), addParticipantButton, participantsChipGroup, getResources().getDrawable(R.drawable.ic_person_pin_black_18dp));
 
-        /* click à partir du FLOAT (création meeting) */
 
-        //meetingName.setHint(R.string.meeting_name);
+        dateButton.setOnClickListener
+                (view -> dateHandle(dateEdit));
 
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dateHandle(dateEdit);
-            }
-        });
+        startHourButton.setOnClickListener
+                (view -> beginTimeHandle(beginTimeEdit, getContext()));
 
-        startHourButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                beginTimeHandle(beginTimeEdit, getContext());
-            }
-        });
-        endHourButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                endTimeHandle(endTimeEdit, getContext());
-            }
-        });
+        endHourButton.setOnClickListener
+                (view -> endTimeHandle(endTimeEdit, getContext()));
 
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
-            @Override
-            public void onClick(View v) {
+        buttonSave.setOnClickListener(v -> {
 
-                /* Gestion des cas où l'utilisateur ne remplit pas tous les champs */
-                if (meetingName.getText().toString().equals("")) {
-                    ToastUtils.showToastLong("Veuillez SVP nommer votre réunion", getContext());
-                } else if (dateEdit.getText().toString().equals("")) {
-                    ToastUtils.showToastLong("Veuillez SVP définir une date", getContext());
-                } else if (beginTimeEdit.getText().toString().equals("")) {
-                    ToastUtils.showToastLong("Veuillez SVP définir l'heure de début", getContext());
-                } else if (endTimeEdit.getText().toString().equals("")) {
-                    ToastUtils.showToastLong("Veuillez SVP définir l'heure de fin", getContext());
-                } else if (meetingRoomsSpinner.getSelectedItem().toString().equals("Veuillez choisir une salle")) {
-                    ToastUtils.showToastLong("Veuillez SVP choisir une salle", getContext());
-                } else if (participantsChipGroup.getChildCount() == 0) {
-                    ToastUtils.showToastLong("Veuillez SVP renseigner les adresses mail des participants", getContext());
-                } else {
+            /* Case field empty or inexacte */
+            if (meetingName.getText().toString().equals("")) {
+                ToastUtils.showToastLong("Veuillez SVP nommer votre réunion", getContext());
+            } else if (dateEdit.getText().toString().equals("")) {
+                ToastUtils.showToastLong("Veuillez SVP définir une date", getContext());
+            } else if (beginTimeEdit.getText().toString().equals("")) {
+                ToastUtils.showToastLong("Veuillez SVP définir l'heure de début", getContext());
+            } else if (endTimeEdit.getText().toString().equals("")) {
+                ToastUtils.showToastLong("Veuillez SVP définir l'heure de fin", getContext());
+            } else if (meetingRoomsSpinner.getSelectedItem().toString().equals("Veuillez choisir une salle")) {
+                ToastUtils.showToastLong("Veuillez SVP choisir une salle", getContext());
+            } else if (participantsChipGroup.getChildCount() == 0) {
+                ToastUtils.showToastLong("Veuillez SVP renseigner les adresses mail des participants", getContext());
+            } else {
 
+                checkRoomAvailability();
 
-
-                    
-
-                   
-
-
-
-                    checkRoomAvailability();
-                    
-
-                }
             }
         });
     }
 
     private void checkRoomAvailability() {
 
+        //call putComaParticipantsList function
         String participantsList = putComaParticipantsList();
 
-        /* String vers DateTime */
+        /* String to DateTime */
         DateTimeFormatter formatterDate = DateTimeFormat.forPattern("dd/MM/yyyy");
         DateTime mDateEditJoda = formatterDate.parseDateTime(dateEdit.getText().toString());
 
@@ -218,11 +153,10 @@ public class CreateMeetingFragment extends Fragment {
 
         System.out.println("-------------size------------------"+itemViewModel.getMeetings().getValue().size());
 
-        /* Création nouveau meeting */
-        //Meeting meeting = MeetingUtils.newMeeting(mApiService, meetingName, mDateEditJoda, mBeginTimeEditJoda, mEndTimeEditJoda, participantsList, meetingRoomsSpinner);
-        Meeting meeting = new Meeting(itemViewModel.getMeetings().getValue().size(),meetingName.getText().toString(),participantsList, mBeginTimeEditJoda,mEndTimeEditJoda,new Room(itemViewModel.getMeetings().getValue().size(),meetingRoomsSpinner.getSelectedItem().toString()));
+        /* Creation new meeting */
+        Meeting meeting = new Meeting(itemViewModel.getMeetings().getValue().size(),meetingName.getText().toString(),participantsList, mBeginCompleteJoda,mEndCompleteJoda,new Room(itemViewModel.getMeetings().getValue().size(),meetingRoomsSpinner.getSelectedItem().toString()));
 
-        /* Gestion de la disponibilité des salles */
+        /* check Room availability */
         boolean timeProblem = false;
         boolean reserved = false;
         for (Meeting m : itemViewModel.getMeetings().getValue()) {

@@ -9,13 +9,9 @@
     android:fitsSystemWindows="true"
     tools:context=".Activities.ListMeetingActivity">
 
-
-
-       <include android:id="@+id/toolbar"
+       <include
+           android:id="@+id/toolbar"
            layout="@layout/toolbar"/>
-
-
-
 
     <FrameLayout
         android:id="@+id/frame_list_meeting_activity"

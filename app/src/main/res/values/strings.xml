@@ -13,6 +13,8 @@
     <!-- Set content description fragment_list_meeting_item -->
     <string name="item_text_mail">smail.omari@laposte.net</string>
     <string name="item_text_reunion">Meeting Title</string>
+    <string name="content_description_delete_button">content description delete button</string>
+    <string name="content_description_image_view">content description image view</string>
 
 
     <!-- Set content description fragment_details_meeting -->
