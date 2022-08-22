@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal">18sp</dimen>
+    <dimen name="details_meeting_name_size_text">35sp</dimen>
+
+    <!-- margin for fragment_list_meeting_item.xml -->
+    <dimen name="margin_start_first_dash">40dp</dimen>
+    <dimen name="margin_start_time_text_view">40dp</dimen>
+    <dimen name="margin_start_room_text_view">40dp</dimen>
+    <dimen name="margin_width_item_name">140dp</dimen>
+    <dimen name="margin_start_second_dash">40dp</dimen>
+    <dimen name="width_first_dash">25dp</dimen>
+    <dimen name="height_first_dash">25dp</dimen>
+
+    <!-- margin for fragment_details_meeting.xml -->
+    <dimen name="margin_start_details_date_button">240dp</dimen>
+    <dimen name="width_details_date_button">300dp</dimen>
+    <dimen name="width_details_end_hour_button">300dp</dimen>
+    <dimen name="width_details_start_hour_button">300dp</dimen>
+</resources>

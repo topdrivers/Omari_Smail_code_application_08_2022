@@ -3,7 +3,7 @@ package com.example.mareu.injection;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mareu.Fragments.ItemViewModel;
+import com.example.mareu.viewModel.ItemViewModel;
 import com.example.mareu.repository.ItemDataRepository;
 
 import java.util.concurrent.Executor;

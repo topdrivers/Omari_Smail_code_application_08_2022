@@ -8,16 +8,24 @@
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/drawable/round_add_circle_20.xml" value="0.155" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/drawable/round_add_circle_24.xml" value="0.155" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/drawable/rounded_button.xml" value="0.1805" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-large/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-large/fragment_details_meeting.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-large/fragment_list_meeting_item.xml" value="0.33" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-xlarge/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-xlarge/fragment_details_meeting.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout-xlarge/fragment_list_meeting_item.xml" value="0.25" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/activity_create_meeting.xml" value="0.1" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/activity_details_meeting.xml" value="0.1" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_create_meeting.xml" value="0.22" />
-        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_details_meeting.xml" value="0.22" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_create_meeting.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_details_meeting.xml" value="0.25" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_list_meeting.xml" value="0.25" />
-        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_list_meeting_item.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/fragment_list_meeting_item.xml" value="0.25" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/spinner_item.xml" value="0.1" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/sauvegarde gestion affichage ecran/Mareu/app/src/main/res/layout-large/fragment_list_meeting_item.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/sauvegarde gestion affichage ecran/Mareu/app/src/main/res/layout/fragment_details_meeting.xml" value="0.14023086789226166" />
       </map>
     </option>
   </component>

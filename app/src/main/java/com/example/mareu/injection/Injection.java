@@ -3,7 +3,7 @@ package com.example.mareu.injection;
 import android.content.Context;
 
 
-import com.example.mareu.DI.DI;
+import com.example.mareu.di.DI;
 import com.example.mareu.repository.ItemDataRepository;
 import com.example.mareu.service.MeetingApiService;
 
@@ -22,7 +22,6 @@ public class Injection {
         Executor executor = provideExecutor();
         return new ViewModelFactory(dataSourceItem, executor);
     }
-
 
 
     public static Executor provideExecutor(){ return Executors.newSingleThreadExecutor(); }

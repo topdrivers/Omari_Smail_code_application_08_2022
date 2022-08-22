@@ -37,6 +37,7 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
+    implementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     // EVENT BUS
@@ -57,6 +58,14 @@ dependencies {
 
 
     testImplementation 'junit:junit:4.13.2'
+
+
+    testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
+
+    // INSTRUMENTATION TEST
+    androidTestImplementation 'androidx.test:rules:1.4.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "org.robolectric:robolectric:4.2.1"
+
 }

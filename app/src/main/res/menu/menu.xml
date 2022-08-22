@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group_main_menu"
+        android:checkableBehavior="single">
 
         <item
             android:id="@+id/allMeeting"
@@ -11,59 +14,69 @@
             />
 
 
-        <item android:id="@+id/filter"
+        <item
+            android:id="@+id/filter"
             android:title="Filtrer"
             android:checkable="false"
             >
 
             <menu>
-                <item android:id="@+id/byDate"
+                <item
+                    android:id="@+id/byDate"
                     android:checkable="false"
                     android:title="Sélectionner date"/>
 
-                <item android:id="@+id/byRoom"
+                <item
+                    android:id="@+id/byRoom"
                     android:checkable="false"
                     android:title="Sélectionner salle">
 
                     <menu>
 
-                        <item android:id="@+id/eclair"
+                        <item
+                            android:id="@+id/eclair"
                             android:checkable="false"
                             android:title="éclair"/>
-                        <item android:id="@+id/andromede"
+                        <item
+                            android:id="@+id/andromede"
                             android:checkable="false"
                             android:title="Andromède"/>
-                        <item android:id="@+id/paintsilvia"
+                        <item
+                            android:id="@+id/paintsilvia"
                             android:checkable="false"
                             android:title="Paintsilvia"/>
-                        <item android:id="@+id/pegasus"
+                        <item
+                            android:id="@+id/pegasus"
                             android:checkable="false"
                             android:title="Pegasus"/>
-                        <item android:id="@+id/vulton"
+                        <item
+                            android:id="@+id/vulton"
                             android:checkable="false"
                             android:title="Vulton"/>
-                        <item android:id="@+id/quantum"
+                        <item
+                            android:id="@+id/quantum"
                             android:checkable="false"
                             android:title="Quantum"/>
-                        <item android:id="@+id/sirius"
+                        <item
+                            android:id="@+id/sirius"
                             android:checkable="false"
                             android:title="Sirius"/>
-                        <item android:id="@+id/phebus"
+                        <item
+                            android:id="@+id/phebus"
                             android:checkable="false"
                             android:title="Phebus"/>
-                        <item android:id="@+id/betelgeuse"
+                        <item
+                            android:id="@+id/betelgeuse"
                             android:checkable="false"
                             android:title="Betelgeuse"/>
-                        <item android:id="@+id/centurion"
+                        <item
+                            android:id="@+id/centurion"
                             android:checkable="false"
                             android:title="Centurion"/>
-
 
                     </menu>
 
                 </item>
-
-
 
             </menu>
 

@@ -1,5 +1,7 @@
 package com.example.mareu.repository;
 
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 
 import com.example.mareu.model.Meeting;
@@ -20,9 +22,9 @@ public class ItemDataRepository {
 
     // --- GET ---
 
-    public LiveData<List<Meeting >> getMeetings(){ return this.meetingApiService.getMeetings(); }
+    public List<Meeting > getMeetings(){ return this.meetingApiService.getMeetings(); }
 
-    public LiveData<List<Meeting >> getMeetingsByDate(DateTime dateTime){
+    public List<Meeting > getMeetingsByDate(DateTime dateTime){
         return this.meetingApiService.getMeetingsBydate(dateTime);
     }
 
@@ -35,5 +37,5 @@ public class ItemDataRepository {
 
     // --- Filter item by room ---
 
-    public void filerItemRoom(String room) {meetingApiService.filterItemRoom(room);  }
+    public void filerItemRoom(String room, Context context) {meetingApiService.filterItemRoom(room,context);  }
 }

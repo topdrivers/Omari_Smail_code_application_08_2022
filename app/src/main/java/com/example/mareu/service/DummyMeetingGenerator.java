@@ -22,8 +22,8 @@ public abstract class DummyMeetingGenerator {
     private static final DateTime endTime3 = new DateTime(2022,7,5,10,0);
     private static final DateTime startTime4 = new DateTime(2022,8,25,15,45);
     private static final DateTime endTime4 = new DateTime(2022,8,25,16,45);
-    private static final DateTime startTime5 = new DateTime(2022,8,10,23,30);
-    private static final DateTime endTime5 = new DateTime(2022,8,10,23,45);
+    private static final DateTime startTime5 = new DateTime(2022,9,30,23,30);
+    private static final DateTime endTime5 = new DateTime(2022,9,30,23,45);
     private static final DateTime startTime6 = new DateTime(2022,8,10,23,45);
     private static final DateTime endTime6 = new DateTime(2022,8,10,23,55);
 
@@ -35,7 +35,7 @@ public abstract class DummyMeetingGenerator {
 
 
 
-    static LiveData<List<Meeting>> generateMeeting() {
+    static List<Meeting> generateMeeting() {
 
         DUMMY_METINGS.add(new     Meeting(0, "Réunion 1",
                 "user1@user.fr, user2@user.fr, user3@user.fr", startTime1,
@@ -61,23 +61,11 @@ public abstract class DummyMeetingGenerator {
                 "user16@user.fr", startTime6,
                 endTime6, new Room(5, "Vulton")));
 
-        return new LiveData<List<Meeting>>(DUMMY_METINGS) {
-            @Override
-            public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<Meeting>> observer) {
-                super.observe(owner, observer);
-            }
-        };
+        return DUMMY_METINGS ;
     }
 
-    static LiveData<List<Meeting>> generateMeetingFilteredMeeting() {
-        return new LiveData<List<Meeting>>(FILTERED_MEETINGS) {
-            @Override
-            public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<Meeting>> observer) {
-                super.observe(owner, observer);
-            }
-        };
-
-
+    static List<Meeting> generateMeetingFilteredMeeting() {
+        return FILTERED_MEETINGS;
     }
 
 

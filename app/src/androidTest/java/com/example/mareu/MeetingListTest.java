@@ -13,7 +13,7 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.mareu.Activities.ListMeetingActivity;
+import com.example.mareu.activities.ListMeetingActivity;
 import com.example.mareu.utils.DeleteViewAction;
 
 import org.junit.Before;
@@ -63,7 +63,7 @@ public class MeetingListTest {
                         .actionOnItemAtPosition(1, new DeleteViewAction()));
 
 
-        // Then : the number of element is 7
+        // Then : the number of element is 5
         onView(ViewMatchers.withId(R.id.recyclerview_list_meeting))
                 .check(withItemCount(ITEMS_COUNT -1));
 

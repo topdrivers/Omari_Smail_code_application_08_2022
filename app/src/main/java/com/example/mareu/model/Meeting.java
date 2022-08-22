@@ -1,8 +1,13 @@
 package com.example.mareu.model;
 
+import static com.example.mareu.fragments.ListMeetingFragment.itemViewModel;
+
 import org.joda.time.DateTime;
 
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -69,7 +74,23 @@ public class Meeting implements Serializable {
         return room;
     }
 
-    public String getStatus (){return status;}
+    public String getStatus (){
+        List<Meeting> meetingList = itemViewModel.getMeetings();
+        for ( Meeting meeting : meetingList  ){
+            Date currentTime = Calendar.getInstance().getTime();
+            float diffenceTime = meeting.getStartDate().toDate().getTime() - currentTime.getTime();
+            float differenceInHours = (diffenceTime) / 1000L / 60L / 60L; // Divide by millis/sec, secs/min, mins/hr
+
+
+            if(differenceInHours<=1.5 && differenceInHours>=0){
+                meeting.setStatus("BETWEEN");
+            }else if(differenceInHours > 1.5){
+                meeting.setStatus("AFTER");
+            }else {
+                meeting.setStatus("BEFORE");
+            }
+        }
+        return status;}
 
 
     public void setId(long id) {

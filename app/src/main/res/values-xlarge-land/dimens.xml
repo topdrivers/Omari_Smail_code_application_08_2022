@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal">16sp</dimen>
+    <dimen name="details_meeting_name_size_text">65sp</dimen>
+
+    <!-- margin for fragment_list_meeting_item.xml -->
+    <dimen name="margin_start_first_dash">150dp</dimen>
+    <dimen name="margin_start_time_text_view">150dp</dimen>
+    <dimen name="margin_start_room_text_view">150dp</dimen>
+    <dimen name="margin_width_item_name">140dp</dimen>
+    <dimen name="margin_start_second_dash">150dp</dimen>
+    <dimen name="width_first_dash">25dp</dimen>
+    <dimen name="height_first_dash">25dp</dimen>
+
+
+
+    <!-- margin dp for fragment_details_meeting.xml -->
+    <dimen name="margin_top_save_button">24dp</dimen>
+    <dimen name="margin_end_save_button">44dp</dimen>
+    <dimen name="margin_padding_start_save_button">24dp</dimen>
+    <dimen name="margin_padding_end_save_button">24dp</dimen>
+    <dimen name="height_spinner">48dp</dimen>
+    <dimen name="margin_details_top_spinner">24dp</dimen>
+    <dimen name="margin_start_details_date_text_view">66dp</dimen>
+    <dimen name="margin_top_details_date_text_view">42dp</dimen>
+    <dimen name="margin_start_details_start_hour">66dp</dimen>
+    <dimen name="margin_top_details_start_hour">42dp</dimen>
+    <dimen name="margin_start_details_end_hour">66dp</dimen>
+    <dimen name="margin_top_details_end_hour">42dp</dimen>
+    <dimen name="margin_start_details_start_hour_button">94dp</dimen>
+    <dimen name="width_details_date_text_view">240dp</dimen>
+    <dimen name="width_details_start_hour">240dp</dimen>
+    <dimen name="width_details_end_hour">240dp</dimen>
+    <dimen name="width_details_start_hour_button">400dp</dimen>
+    <dimen name="margin_end_details_start_hour_button">44dp</dimen>
+    <dimen name="width_details_end_hour_button">400dp</dimen>
+    <dimen name="width_details_date_button">400dp</dimen>
+    <dimen name="margin_start_details_date_button">300dp</dimen>
+    <dimen name="margin_top_details_select">34dp</dimen>
+    <dimen name="margin_start_divider">66dp</dimen>
+    <dimen name="margin_end_divider">66dp</dimen>
+    <dimen name="margin_top_chip_group">66dp</dimen>
+    <dimen name="margin_start_details_meeting_name_text">66dp</dimen>
+    <dimen name="margin_top_details_meeting_name_text">56dp</dimen>
+    <dimen name="margin_top_details_email_input">24dp</dimen>
+    <dimen name="min_width_details_email_input">52dp</dimen>
+    <dimen name="width_details_autocomplete">180dp</dimen>
+    <dimen name="padding_start_add_particiapant_button">24dp</dimen>
+    <dimen name="padding_end_add_particiapant_button">24dp</dimen>
+    <dimen name="margin_end_details_date_button">44dp</dimen>
+</resources>

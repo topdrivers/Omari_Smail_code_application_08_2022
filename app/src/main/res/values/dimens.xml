@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="large">21sp</dimen>
-    <dimen name="normal">16sp</dimen>
+    <dimen name="large">30sp</dimen>
+    <dimen name="xlarge">45sp</dimen>
+    <dimen name="normal">14sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="details_meeting_name_size_text">18sp</dimen>
+
+    <!-- margin dp for fragment_list_meeting_item.xml -->
+    <dimen name="margin_start_name_text_view">15dp</dimen>
+    <dimen name="margin_end_delete_button">16dp</dimen>
+    <dimen name="item_image_view_width">40dp</dimen>
+    <dimen name="item_image_view_height">40dp</dimen>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="margin_start_email_text_view">15dp</dimen>
+    <dimen name="margin_end_email_text_view">15dp</dimen>
+    <dimen name="margin_width_item_name">80dp</dimen>
+    <dimen name="margin_height_item_name">25dp</dimen>
+    <dimen name="width_first_dash">15dp</dimen>
+    <dimen name="height_first_dash">15dp</dimen>
+    <dimen name="margin_start_first_dash">2dp</dimen>
+    <dimen name="margin_start_time_text_view">2dp</dimen>
+    <dimen name="margin_start_room_text_view">2dp</dimen>
+    <dimen name="margin_start_second_dash">8dp</dimen>
+
+    <!-- margin sp for fragment_list_meeting_item.xml -->
+    <dimen name="text_size_email_text_view">12sp</dimen>
+
+    <!-- margin dp for fragment_details_meeting.xml -->
+    <dimen name="margin_top_save_button">8dp</dimen>
+    <dimen name="margin_end_save_button">8dp</dimen>
+    <dimen name="margin_padding_start_save_button">8dp</dimen>
+    <dimen name="margin_padding_end_save_button">8dp</dimen>
+    <dimen name="height_spinner">48dp</dimen>
+    <dimen name="margin_details_top_spinner">8dp</dimen>
+    <dimen name="margin_start_details_date_text_view">16dp</dimen>
+    <dimen name="margin_top_details_date_text_view">32dp</dimen>
+    <dimen name="margin_start_details_start_hour">16dp</dimen>
+    <dimen name="margin_top_details_start_hour">32dp</dimen>
+    <dimen name="margin_start_details_end_hour">16dp</dimen>
+    <dimen name="margin_top_details_end_hour">24dp</dimen>
+    <dimen name="margin_start_details_start_hour_button">14dp</dimen>
+    <dimen name="width_details_date_text_view">120dp</dimen>
+    <dimen name="width_details_start_hour">120dp</dimen>
+    <dimen name="width_details_end_hour">120dp</dimen>
+    <dimen name="width_details_start_hour_button">200dp</dimen>
+    <dimen name="margin_end_details_start_hour_button">24dp</dimen>
+    <dimen name="width_details_end_hour_button">200dp</dimen>
+    <dimen name="width_details_date_button">200dp</dimen>
+    <dimen name="margin_start_details_date_button">50dp</dimen>
+    <dimen name="margin_top_details_select">24dp</dimen>
+    <dimen name="margin_start_divider">24dp</dimen>
+    <dimen name="margin_end_divider">24dp</dimen>
+    <dimen name="margin_top_chip_group">8dp</dimen>
+    <dimen name="margin_start_details_meeting_name_text">16dp</dimen>
+    <dimen name="margin_top_details_meeting_name_text">56dp</dimen>
+    <dimen name="margin_top_details_email_input">4dp</dimen>
+    <dimen name="min_width_details_email_input">32dp</dimen>
+    <dimen name="width_details_autocomplete">50dp</dimen>
+    <dimen name="padding_start_add_particiapant_button">8dp</dimen>
+    <dimen name="padding_end_add_particiapant_button">8dp</dimen>
+    <dimen name="margin_end_details_date_button">10dp</dimen>
 </resources>

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mareu">
         <activity
-            android:name=".Activities.CreateMeetingActivity"
+            android:name=".activities.CreateMeetingActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.DetailsMeetingActivity"
+            android:name=".activities.DetailsMeetingActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.ListMeetingActivity"
+            android:name=".activities.ListMeetingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

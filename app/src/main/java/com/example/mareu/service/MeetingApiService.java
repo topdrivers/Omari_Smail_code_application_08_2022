@@ -1,5 +1,7 @@
 package com.example.mareu.service;
 
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 
 import com.example.mareu.model.Meeting;
@@ -17,7 +19,7 @@ public interface MeetingApiService {
      * Get all my Meeting
      * @return {@link List}
      */
-    LiveData<List<Meeting>> getMeetings();
+    List<Meeting> getMeetings();
 
 
 
@@ -35,8 +37,11 @@ public interface MeetingApiService {
 
 
     //Get meeting by date
-    LiveData<List<Meeting>> getMeetingsBydate(DateTime dateTime);
+    List<Meeting> getMeetingsBydate(DateTime dateTime);
 
     //Filter item by room
-    void filterItemRoom(String room);
+    void filterItemRoom(String room, Context context);
+
+    //get filtered item by room
+    public List<Meeting> getFilteredList() ;
 }

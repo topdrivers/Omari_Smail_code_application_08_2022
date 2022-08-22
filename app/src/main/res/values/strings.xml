@@ -16,6 +16,10 @@
     <string name="content_description_delete_button">content description delete button</string>
     <string name="content_description_image_view">content description image view</string>
 
+    <!-- string text fragment_list_meeting_item -->
+    <string name="text_time_text_view">01/01 08:00</string>
+    <string name="text_room_text_view">Eclair</string>
+
 
     <!-- Set content description fragment_details_meeting -->
     <string name="save_button">Enregistrer</string>
@@ -48,6 +52,15 @@
 
     <!-- for Autocomplete utils string-->
     <string name="error_message">Email erronné !</string>
+
+    <!-- string declaration for DetailsMeetingTest-->
+    <string name="textview_name_for_test">Réunion 1</string>
+    <string name="textview_date_for_test">25/08/2022</string>
+    <string name="textview_start_hour_for_test">16:00</string>
+    <string name="textview_end_hour_for_test">17:00</string>
+    <string name="textview_spinner_content_for_test">Pegasus</string>
+    <string name="textview_chip_group_content_for_test">user1@user.fr user2@user.fr user3@user.fr</string>
+
 
 
 </resources>
