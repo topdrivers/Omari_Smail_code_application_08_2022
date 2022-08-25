@@ -68,10 +68,10 @@ public class MyMeetingRecyclerViewAdapter extends   RecyclerView.Adapter<MyMeeti
                     .into(holder.meetingAvatar);
         }
 
-
         holder.deleteButton
                 .setOnClickListener(v -> EventBus.getDefault()
                         .post(new DeleteMeetingEvent(meeting)));
+
 
         holder.itemView.setOnClickListener(v -> {
             Bundle bundle=new Bundle();

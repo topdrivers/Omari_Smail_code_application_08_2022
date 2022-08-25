@@ -19,7 +19,7 @@ public interface MeetingApiService {
      * Get all my Meeting
      * @return {@link List}
      */
-    List<Meeting> getMeetings();
+    LiveData<List<Meeting>> getMeetings();
 
 
 
@@ -37,11 +37,11 @@ public interface MeetingApiService {
 
 
     //Get meeting by date
-    List<Meeting> getMeetingsBydate(DateTime dateTime);
+    LiveData<List<Meeting>> getMeetingsBydate(DateTime dateTime);
 
     //Filter item by room
     void filterItemRoom(String room, Context context);
 
     //get filtered item by room
-    public List<Meeting> getFilteredList() ;
+    List<Meeting> getFilteredList() ;
 }

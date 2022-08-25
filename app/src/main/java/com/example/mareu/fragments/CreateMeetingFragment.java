@@ -36,6 +36,8 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.util.Objects;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -88,6 +90,8 @@ public class CreateMeetingFragment extends Fragment {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
          */
+
+
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -151,12 +155,12 @@ public class CreateMeetingFragment extends Fragment {
 
 
         /* Creation new meeting */
-        Meeting meeting = new Meeting(itemViewModel.getMeetings().size(),meetingName.getText().toString(),participantsList, mBeginCompleteJoda,mEndCompleteJoda,new Room(itemViewModel.getMeetings().size(),meetingRoomsSpinner.getSelectedItem().toString()));
+        Meeting meeting = new Meeting(itemViewModel.getMeetings().getValue().size(),meetingName.getText().toString(),participantsList, mBeginCompleteJoda,mEndCompleteJoda,new Room(itemViewModel.getMeetings().getValue().size(),meetingRoomsSpinner.getSelectedItem().toString()));
 
         /* check Room availability */
         boolean timeProblem = false;
         boolean reserved = false;
-        for (Meeting m : itemViewModel.getMeetings()) {
+        for (Meeting m : itemViewModel.getMeetings().getValue()) {
             if (m.getRoom().getName().equals(meetingRoomsSpinner.getSelectedItem().toString()) &&
                     ((mBeginCompleteJoda.isBefore(m.getEndTime()) && mBeginCompleteJoda.isAfter(m.getStartDate()))
                             || (mEndCompleteJoda.isBefore(m.getEndTime()) && mEndCompleteJoda.isAfter(m.getStartDate()))

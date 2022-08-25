@@ -1,7 +1,5 @@
 package com.example.mareu;
 
-
-import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -18,8 +16,6 @@ import static com.example.mareu.Matchers.detailsItemViewMatcher.withTitle;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.is;
-
-import android.content.Context;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
@@ -33,24 +29,18 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import com.example.mareu.activities.ListMeetingActivity;
 
 import org.hamcrest.Matchers;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 public class CreateMeetingTest {
-    // FOR DATA
-    private Context context;
+
 
     @Rule
     public ActivityScenarioRule<ListMeetingActivity> mActivityRule =
             new ActivityScenarioRule<>(ListMeetingActivity.class);
 
-    @Before
-    public void setup() {
-        this.context =  getApplicationContext().getApplicationContext();
-    }
 
     public static void setDate(int year, int monthOfYear, int dayOfMonth) {
         onView(withId(R.id.create_meeting_fragment_date_button)).perform(click());
@@ -70,8 +60,6 @@ public class CreateMeetingTest {
      */
     @Test
     public void check_creating_meeting_item() {
-
-        final String AUTOFILL_HINT_NAME = "Eclair";
 
         //Click floating add meeting button
         onView(withId(R.id.list_meeting_activity_add_meeting))

@@ -8,7 +8,6 @@ import static com.example.mareu.fragments.ListMeetingFragment.myMeetingRecyclerV
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
-import androidx.lifecycle.LiveData;
 import com.example.mareu.views.MyMeetingRecyclerViewAdapter;
 import com.example.mareu.model.Meeting;
 
@@ -43,14 +42,14 @@ public class DatePickerUtils {
 
             /* Filtre par date */
             boolean nothing = true;
-            for (Meeting m : itemViewModel.getMeetings()) {
+            for (Meeting m : itemViewModel.getMeetings().getValue()) {
                 if (m.getStartDate().toLocalDate().equals(time.toLocalDate())) {
                     nothing = false;
                 }
             }
             if (!nothing) {
 
-                meetingList = itemViewModel.getMeetingsByDate(time);
+                meetingList = itemViewModel.getMeetingsByDate(time).getValue();
                 myMeetingRecyclerViewAdapter = new MyMeetingRecyclerViewAdapter(meetingList);
                 mRecyclerView.setAdapter( myMeetingRecyclerViewAdapter);
                 myMeetingRecyclerViewAdapter.notifyDataSetChanged();

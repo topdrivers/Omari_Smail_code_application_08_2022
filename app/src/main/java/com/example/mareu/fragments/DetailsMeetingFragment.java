@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.example.mareu.R;
@@ -98,14 +97,11 @@ public class DetailsMeetingFragment extends Fragment {
 
 
       /* click from an item*/
-        System.out.println("----------------meeting------------"+meeting);
+
         if (meeting!=null) {
 
             //call funtion to show selected room
             showSelectedRoom();
-
-            //call function to adapt detail size to screen
-            screenSizePrinting();
 
             //call function to print details informations fiels
             setDetailsInfos();
@@ -159,28 +155,12 @@ public class DetailsMeetingFragment extends Fragment {
     }
 
 
-    private void screenSizePrinting() {
-        /* police size meetingName with different screen size */
-        if ((getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK) ==
-                Configuration.SCREENLAYOUT_SIZE_XLARGE) {
-            meetingName.setTextSize(65);
-        } else if ((getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK) ==
-                Configuration.SCREENLAYOUT_SIZE_NORMAL) {
-            meetingName.setTextSize(35);
-        } else if ((getResources().getConfiguration().screenLayout &
-                Configuration.SCREENLAYOUT_SIZE_MASK) ==
-                Configuration.SCREENLAYOUT_SIZE_LARGE) {
-            meetingName.setTextSize(55);
-        }
-    }
 
     private void showSelectedRoom() {
         /* Spinner to choose meeting room : */
         final ArrayList<String> meetingRooms = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.meeting_rooms_arrays)));
         meetingRooms.add(0, getString(R.string.choose_room));
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getContext(),R.layout.spinner_item,meetingRooms);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_item, meetingRooms);
 
         meetingRoomsSpinner.setAdapter(spinnerAdapter);
 

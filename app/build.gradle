@@ -5,6 +5,7 @@ plugins {
 android {
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.example.mareu"
         minSdk 21
@@ -13,6 +14,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // The following argument makes the Android Test Orchestrator run its
+        // "pm clear" command after each test invocation. This command ensures
+        // that the app's state is completely cleared between tests.
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -25,6 +31,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
 }
 
 dependencies {
@@ -36,29 +45,23 @@ dependencies {
 
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'androidx.test.ext:junit:1.1.3'
+    implementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
-    implementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     // EVENT BUS
     implementation 'org.greenrobot:eventbus:3.1.1'
 
     //VIEW MODEL & LIVE DATA
-
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     implementation 'com.jakewharton:butterknife:10.2.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
-
-
     //DateTime
     implementation 'joda-time:joda-time:2.10.14'
-
-
-    testImplementation 'junit:junit:4.13.2'
-
 
     testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
 
@@ -66,6 +69,23 @@ dependencies {
     androidTestImplementation 'androidx.test:rules:1.4.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    //Unit test
+    testImplementation "org.mockito:mockito-core:3.12.4"
     testImplementation "org.robolectric:robolectric:4.2.1"
+
+    //IDLE CONCURRENT
+    implementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2'
+    androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2'
+
+    androidTestUtil 'androidx.test:orchestrator:1.4.1'
+
+    testImplementation 'androidx.test.espresso:espresso-contrib:3.5.0-alpha07'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.test.espresso:espresso-core:3.5.0-alpha07'
+    implementation 'androidx.test.ext:junit:1.1.3'
+
 
 }

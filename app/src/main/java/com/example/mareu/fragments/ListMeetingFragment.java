@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,6 @@ import com.example.mareu.views.MyMeetingRecyclerViewAdapter;
 import com.example.mareu.injection.Injection;
 import com.example.mareu.injection.ViewModelFactory;
 import com.example.mareu.model.Meeting;
-import com.example.mareu.service.MeetingApiService;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
@@ -32,14 +29,11 @@ public class ListMeetingFragment extends Fragment  {
     public static RecyclerView mRecyclerView;
     public static MyMeetingRecyclerViewAdapter myMeetingRecyclerViewAdapter;
     public static ItemViewModel itemViewModel;
+    public static Context context;
 
 
     public ListMeetingFragment() {
         // Required empty public constructor
-    }
-
-    public static ListMeetingFragment newInstance() {
-        return new ListMeetingFragment();
     }
 
     @Override
@@ -74,7 +68,7 @@ public class ListMeetingFragment extends Fragment  {
      * Init the List of meeting
      */
     private void initList()   {
-        List<Meeting> meetingList = itemViewModel.getMeetings();
+        List<Meeting> meetingList = itemViewModel.getMeetings().getValue();
         myMeetingRecyclerViewAdapter = new MyMeetingRecyclerViewAdapter(meetingList);
         mRecyclerView.setAdapter(myMeetingRecyclerViewAdapter);
     }
@@ -83,9 +77,7 @@ public class ListMeetingFragment extends Fragment  {
 
 
     private void getMeetings(){
-        //itemViewModel.getMeetings().observe(this, this::updateItemsList);
-        List<Meeting> meetingList = itemViewModel.getMeetings();
-        //LiveData<List<Meeting>> meetingList = DummyMeetingGenerator.generateMeeting();
+        List<Meeting> meetingList = itemViewModel.getMeetings().getValue();
         myMeetingRecyclerViewAdapter = new MyMeetingRecyclerViewAdapter(meetingList);
         mRecyclerView.setAdapter(myMeetingRecyclerViewAdapter);
     }
@@ -99,6 +91,7 @@ public class ListMeetingFragment extends Fragment  {
     @Override
     public void onResume() {
         super.onResume();
+        context = getActivity();
         initList();
         this.getMeetings();
     }
@@ -121,7 +114,6 @@ public class ListMeetingFragment extends Fragment  {
     @Subscribe
     public void onDeleteMeeting(DeleteMeetingEvent event) {
         itemViewModel.deleteItem(event.meeting);
-        System.out.println("----------Boolean true or false delete-----------------------"+itemViewModel.getMeetings().contains(event.meeting));
         initList();
     }
 }

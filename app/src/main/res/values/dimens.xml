@@ -4,7 +4,7 @@
     <dimen name="xlarge">45sp</dimen>
     <dimen name="normal">14sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="details_meeting_name_size_text">18sp</dimen>
+    <dimen name="details_meeting_name_size_text">35sp</dimen>
 
     <!-- margin dp for fragment_list_meeting_item.xml -->
     <dimen name="margin_start_name_text_view">15dp</dimen>

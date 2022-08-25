@@ -47,9 +47,6 @@ public class Meeting implements Serializable {
     }
 
 
-
-
-
     public long getId() {
         return id;
     }
@@ -75,7 +72,7 @@ public class Meeting implements Serializable {
     }
 
     public String getStatus (){
-        List<Meeting> meetingList = itemViewModel.getMeetings();
+        List<Meeting> meetingList = itemViewModel.getMeetings().getValue();
         for ( Meeting meeting : meetingList  ){
             Date currentTime = Calendar.getInstance().getTime();
             float diffenceTime = meeting.getStartDate().toDate().getTime() - currentTime.getTime();

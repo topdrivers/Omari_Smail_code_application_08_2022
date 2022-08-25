@@ -29,13 +29,10 @@ public abstract class DummyMeetingGenerator {
 
     public static List<Meeting> DUMMY_METINGS = new ArrayList<>();
 
-
-
     public static List<Meeting> FILTERED_MEETINGS = new ArrayList<>();
 
 
-
-    static List<Meeting> generateMeeting() {
+    static LiveData<List<Meeting>> generateMeeting() {
 
         DUMMY_METINGS.add(new     Meeting(0, "Réunion 1",
                 "user1@user.fr, user2@user.fr, user3@user.fr", startTime1,
@@ -61,11 +58,22 @@ public abstract class DummyMeetingGenerator {
                 "user16@user.fr", startTime6,
                 endTime6, new Room(5, "Vulton")));
 
-        return DUMMY_METINGS ;
+        return new LiveData<List<Meeting>>(DUMMY_METINGS) {
+            @Override
+            public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<Meeting>> observer) {
+                super.observe(owner, observer);
+            }
+        };
     }
 
-    static List<Meeting> generateMeetingFilteredMeeting() {
-        return FILTERED_MEETINGS;
+    static LiveData<List<Meeting>> generateMeetingFilteredMeeting() {
+
+        return new LiveData<List<Meeting>>(FILTERED_MEETINGS) {
+            @Override
+            public void observe(@NonNull LifecycleOwner owner, @NonNull Observer<? super List<Meeting>> observer) {
+                super.observe(owner, observer);
+            }
+        };
     }
 
 

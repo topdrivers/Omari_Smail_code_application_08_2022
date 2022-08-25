@@ -31,10 +31,6 @@ public class ListMeetingActivity extends AppCompatActivity {
     ListMeetingFragment listMeetingFragment;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,7 +136,7 @@ public class ListMeetingActivity extends AppCompatActivity {
                 return true;
 
             case R.id.allMeeting:
-                initList(itemViewModel.getMeetings());
+                initList(itemViewModel.getMeetings().getValue());
                 toolbar.setTitle("Ma réu");
                 return true;
 

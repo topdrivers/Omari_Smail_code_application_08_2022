@@ -22,20 +22,21 @@ public class ItemDataRepository {
 
     // --- GET ---
 
-    public List<Meeting > getMeetings(){ return this.meetingApiService.getMeetings(); }
+    public LiveData<List<Meeting>> getMeetings(){ return this.meetingApiService.getMeetings(); }
 
-    public List<Meeting > getMeetingsByDate(DateTime dateTime){
+    //Get Meetings by date
+    public LiveData<List<Meeting>> getMeetingsByDate(DateTime dateTime){
         return this.meetingApiService.getMeetingsBydate(dateTime);
     }
 
     // --- CREATE ---
-
     public void createItem(Meeting meeting){ meetingApiService.createMeeting(meeting); }
 
     // --- DELETE ---
     public void deleteItem(Meeting meeting){ meetingApiService.deleteMeeting(meeting); }
 
     // --- Filter item by room ---
-
-    public void filerItemRoom(String room, Context context) {meetingApiService.filterItemRoom(room,context);  }
+    public void filerItemRoom(String room, Context context) {
+        meetingApiService.filterItemRoom(room,context);
+    }
 }

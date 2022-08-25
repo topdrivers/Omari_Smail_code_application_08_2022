@@ -17,7 +17,6 @@ public class DetailsMeetingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_meeting);
         configureAndShowDetailsmeetingFragment((Meeting)getIntent().getSerializableExtra("id"));
-        System.out.println("-------------- get serializable----------"+(Meeting)getIntent().getSerializableExtra("id"));
 
     }
 

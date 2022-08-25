@@ -26,6 +26,12 @@
         <entry key="..\:/Users/smail/Documents/openclassroom/Mareu/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/sauvegarde gestion affichage ecran/Mareu/app/src/main/res/layout-large/fragment_list_meeting_item.xml" value="0.14023086789226166" />
         <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/sauvegarde gestion affichage ecran/Mareu/app/src/main/res/layout/fragment_details_meeting.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout-large/activity_main.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout/activity_create_meeting.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout/activity_details_meeting.xml" value="0.14023086789226166" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout/activity_main.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout/fragment_create_meeting.xml" value="0.1" />
+        <entry key="..\:/Users/smail/Documents/openclassroom/Projets/projet 4/version sans livedate/Mareu/app/src/main/res/layout/fragment_list_meeting.xml" value="0.1" />
       </map>
     </option>
   </component>

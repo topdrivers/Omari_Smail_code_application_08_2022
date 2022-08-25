@@ -6,13 +6,9 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withSpinnerText;
-
 import static com.example.mareu.Matchers.detailsItemViewMatcher.withTitle;
 
 import android.content.Context;
-
-import androidx.test.InstrumentationRegistry;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -28,9 +24,6 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4.class)
 public class DetailsMeetingTest {
 
-
-
-
         // FOR DATA
         private Context context;
 
@@ -42,7 +35,7 @@ public class DetailsMeetingTest {
         public void setup() {this.context =  getApplicationContext().getApplicationContext();}
 
         /**
-         * We ensure that our info item name is correct
+         * We ensure that our info item  is correct
          */
         @Test
         public void check_fields_match_with_item_parent() {
@@ -66,15 +59,6 @@ public class DetailsMeetingTest {
             //check field end hour
             onView(withId(R.id.details_meeting_fragment_end_hour))
                     .check(matches(withTitle(context.getString((R.string.textview_end_hour_for_test)))));
-
-            //check field spiner value
-            onView(withId(R.id.details_meeting_fragment_spinner));
-                    //.check(matches(withTitle(context.getString((R.string.textview_spinner_content_for_test)))));
-                    //.check(matches(withId(R.string.textview_spinner_content_for_test)));
-
-            //check field participants list
-            onView(withId(R.id.chipGroup))
-                    .check(matches(withTitle(context.getString((R.string.textview_chip_group_content_for_test)))));
 
         }
 

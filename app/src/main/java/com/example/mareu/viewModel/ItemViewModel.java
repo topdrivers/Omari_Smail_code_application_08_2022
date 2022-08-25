@@ -33,11 +33,11 @@ public class ItemViewModel extends ViewModel {
     // FOR ITEM
     // -------------
 
-    public List<Meeting> getMeetings() {
+    public LiveData<List<Meeting>> getMeetings() {
         return itemDataSource.getMeetings();
     }
 
-    public List<Meeting> getMeetingsByDate(DateTime dateTime) {
+    public LiveData<List<Meeting>> getMeetingsByDate(DateTime dateTime) {
         return itemDataSource.getMeetingsByDate(dateTime);
     }
 

@@ -13,8 +13,6 @@ public final class detailsItemViewMatcher {
     public static BoundedMatcher<View, TextView> withTitle(final String titleTested) {
         return new BoundedMatcher<View, TextView>(TextView.class) {
 
-
-
             private boolean triedMatching;
             private String title;
 

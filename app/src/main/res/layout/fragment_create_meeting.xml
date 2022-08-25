@@ -46,6 +46,7 @@
                 android:layout_height="@dimen/height_spinner"
                 android:layout_marginTop="@dimen/margin_details_top_spinner"
                 android:prompt="@string/meeting_room"
+                android:contentDescription="dlkjfslkdfj"
                 app:backgroundTint="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.272"
